@@ -10,6 +10,7 @@ vcpkg_from_github(
         fix_cmake_install.patch
         Fix-error-C2338.patch
         fix-error-C2039.diff
+        add-natvis-and-headers.patch
 )
 
 file(COPY "${CMAKE_CURRENT_LIST_DIR}/EASTLConfig.cmake.in" DESTINATION "${SOURCE_PATH}")

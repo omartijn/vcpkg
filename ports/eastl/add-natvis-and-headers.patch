@@ -1,0 +1,14 @@
+diff --git a/CMakeLists.txt b/CMakeLists.txt
+index e8700dc..f20448d 100644
+--- a/CMakeLists.txt
++++ b/CMakeLists.txt
+@@ -20,7 +20,8 @@ include(CommonCppFlags)
+ # Library definition
+ #-------------------------------------------------------------------------------------------
+ file(GLOB EASTL_SOURCES "source/*.cpp")
+-add_library(EASTL ${EASTL_SOURCES})
++file(GLOB_RECURSE EASTL_HEADERS "include/eastl/*.h")
++add_library(EASTL ${EASTL_HEADERS} ${EASTL_SOURCES} doc/EASTL.natvis)
+ 
+ if(EASTL_BUILD_BENCHMARK)
+     add_subdirectory(benchmark)
